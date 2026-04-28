@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Airbnb Income Calculator & STR Host Dashboard — HostCalc</title>
+  <meta name="description" content="Free Airbnb income calculator, STR profit estimator, short-term rental tax calculator, and STR regulations for all 50 states. Everything Airbnb hosts need in one free dashboard.">
+  <meta name="keywords" content="airbnb income calculator, how much can I make on airbnb, str profit calculator, short term rental tax calculator, airbnb host dashboard, str regulations by state">
+  <link rel="canonical" href="https://hostcalc.co/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Airbnb Income Calculator & STR Dashboard — HostCalc",
+    "url": "https://hostcalc.co",
+    "description": "Calculate your Airbnb income, estimate taxes, and check STR regulations for all 50 states.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+    }
+
+    :root {
+      --blue: #1f4fff;
+      --blue-light: #eef2ff;
+      --bg: #eef1f5;
+      --border: #e0e4ea;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --step-pill: #1e2537;
+      --green: #16a34a;
+      --green-light: #dcfce7;
+      --green-bright: #22c55e;
+      --amber: #d97706;
+      --amber-light: #fef3c7;
+      --red: #dc2626;
+      --red-light: #fee2e2;
+      --radius: 14px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.07), 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--bg);
+      padding: 0 40px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .logo { font-size: 22px; font-weight: 700; text-decoration: none; letter-spacing: -0.5px; }
+    .logo-host { color: var(--text); }
+    .logo-calc { color: var(--blue); }
+
+    .header-nav { display: flex; gap: 4px; align-items: center; }
+    .header-nav a {
+      font-size: 14px; font-weight: 500;
+      color: var(--blue); text-decoration: none;
+      padding: 7px 18px; border-radius: 50px;
+      border: 1.5px solid transparent;
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { border-color: var(--blue); }
+    .header-nav a.active { border-color: var(--blue); background: var(--card); }
+    @media (max-width: 680px) { .header-nav { display: none; } }
+
+    /* ── AD ZONES ── */
+    .ad-zone {
+      background: #fff; border: 1.5px dashed #d0d5dd;
+      display: flex; align-items: center; justify-content: center;
+      color: #b0b8c4; font-size: 12px; border-radius: 10px;
+    }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-rect { width: 300px; height: 250px; }
+    .ad-center { display: flex; justify-content: center; padding: 20px 0; }
+    @media (max-width: 820px) { .ad-rect { width: 100%; height: 90px; } }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 36px 20px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h1 { font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.8px; color: var(--text); }
+    .hero h1 em { color: var(--blue); font-style: normal; }
+    .hero p { font-size: 15px; color: var(--muted); max-width: 680px; margin: 0 auto 20px; }
+    .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+    .badge {
+      font-size: 12px; font-weight: 500;
+      background: var(--card); color: var(--muted);
+      padding: 5px 14px; border-radius: 50px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page { max-width: 1120px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* ── SECTION CARD ── */
+    .section-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 28px;
+    }
+    .step-pill {
+      background: var(--step-pill); color: #fff;
+      font-size: 11px; font-weight: 700;
+      padding: 5px 12px; border-radius: 50px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .section-head h2 { font-size: 20px; font-weight: 700; letter-spacing: -0.4px; }
+
+    /* ── FORM ELEMENTS ── */
+    .form-label {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--muted); margin-bottom: 7px;
+    }
+    .form-hint { font-size: 11px; color: #94a3b8; margin-top: 5px; line-height: 1.5; }
+    .form-group { margin-bottom: 20px; }
+
+    /* Input Group — no overlap */
+    .ig {
+      display: flex; align-items: stretch;
+      border: 1.5px solid var(--border); border-radius: 8px;
+      background: #fff; overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .ig:focus-within { border-color: var(--blue); }
+    .ig-sym {
+      display: flex; align-items: center;
+      padding: 0 11px; color: #94a3b8;
+      font-size: 14px; user-select: none;
+      flex-shrink: 0; background: #f8fafc;
+      border-right: 1px solid var(--border);
+    }
+    .ig-sym.right {
+      border-right: none; border-left: 1px solid var(--border);
+      font-size: 13px; color: #94a3b8;
+    }
+    .ig-field {
+      flex: 1; border: none; outline: none;
+      padding: 10px 12px; font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      background: transparent; color: var(--text);
+      min-width: 0; -moz-appearance: textfield;
+    }
+    .ig-field::-webkit-outer-spin-button,
+    .ig-field::-webkit-inner-spin-button { -webkit-appearance: none; }
+    .ig-field::placeholder { color: #b0b8c4; }
+
+    select.ig-field { cursor: pointer; }
+
+    /* Slider */
+    .slider-row { display: flex; align-items: center; gap: 14px; margin-bottom: 5px; }
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      flex: 1; height: 5px; border-radius: 3px;
+      background: var(--border); cursor: pointer;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px;
+      border-radius: 50%; background: var(--blue);
+      border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(31,79,255,0.3);
+    }
+    .slider-badge {
+      font-size: 14px; font-weight: 700; color: var(--blue);
+      min-width: 44px; text-align: right;
+    }
+
+    /* ── TWO-COL FORM GRID ── */
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+    @media (max-width: 600px) { .form-2col { grid-template-columns: 1fr; } }
+
+    /* ── STEP 1 LAYOUT ── */
+    .step1-outer { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    @media (max-width: 900px) { .step1-outer { grid-template-columns: 1fr; } }
+
+    .step1-card-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 680px) { .step1-card-inner { grid-template-columns: 1fr; } }
+
+    /* ── STEPS 2-3 LAYOUT ── */
+    .step-inner { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    @media (max-width: 820px) { .step-inner { grid-template-columns: 1fr; } }
+
+    /* ── RESULTS CARDS ── */
+    .res-card {
+      background: var(--blue-light);
+      border: 1px solid rgba(31,79,255,0.12);
+      border-radius: 12px; padding: 22px;
+      margin-bottom: 14px;
+    }
+    .res-card.white { background: #fff; border-color: var(--border); }
+    .res-card.green-bg { background: var(--green-light); border-color: rgba(22,163,74,0.2); }
+    .res-card.red-bg { background: #fff5f5; border-color: rgba(220,38,38,0.12); }
+
+    .res-title {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 14px;
+    }
+    .res-title.blue { color: var(--blue); }
+    .res-title.green { color: var(--green); }
+    .res-title.red { color: #b91c1c; }
+    .res-title.amber { color: var(--amber); }
+
+    .res-row {
+      display: flex; justify-content: space-between;
+      align-items: baseline; padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .res-row:last-child { border-bottom: none; }
+    .res-row .rl { font-size: 13px; color: #4b5563; }
+    .res-row .rv { font-size: 14px; font-weight: 600; color: var(--text); }
+    .res-row .rv.big { font-size: 22px; font-weight: 700; color: var(--blue); }
+    .res-row .rv.green { color: var(--green); font-size: 22px; font-weight: 700; }
+    .res-row .rv.red { color: var(--red); font-size: 22px; font-weight: 700; }
+
+    /* Profit box */
+    .profit-box {
+      border-radius: 12px; padding: 18px 22px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.3s, border-color 0.3s;
+      margin-bottom: 0;
+    }
+    .profit-box .pb-left .pb-label { font-size: 14px; font-weight: 700; }
+    .profit-box .pb-left .pb-sub { font-size: 12px; margin-top: 3px; }
+    .profit-box .pb-value { font-size: 28px; font-weight: 700; }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: var(--amber-light); border: 1px solid #fde68a;
+      border-radius: 8px; padding: 12px 14px;
+      font-size: 12px; color: #78350f; line-height: 1.6;
+      margin-top: 16px;
+    }
+    .tip-line { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+
+    /* ── AD COLUMN (step 1 sidebar) ── */
+    .ad-col { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ── REGULATIONS TABLE ── */
+    .regs-filters { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; }
+    .regs-search-wrap { flex: 1; min-width: 200px; }
+    .regs-search-wrap .ig { border-radius: 8px; }
+
+    .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+    .fp {
+      font-size: 13px; font-weight: 500; padding: 7px 18px;
+      border-radius: 50px; border: 1.5px solid var(--border);
+      background: #fff; cursor: pointer; transition: all 0.15s;
+      color: var(--muted); display: flex; align-items: center; gap: 6px;
+    }
+    .fp:hover { border-color: #94a3b8; }
+    .fp.active-all { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .fp.active-friendly { background: var(--green); border-color: var(--green); color: #fff; }
+    .fp.active-moderate { background: var(--amber); border-color: var(--amber); color: #fff; }
+    .fp.active-restrictive { background: var(--red); border-color: var(--red); color: #fff; }
+
+    .table-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; }
+    thead { background: #f8fafc; }
+    th {
+      padding: 12px 16px; text-align: left;
+      font-size: 11px; font-weight: 700; color: #94a3b8;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      border-bottom: 1px solid var(--border);
+    }
+    td { padding: 13px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafbfc; }
+    td:first-child { font-weight: 600; color: var(--text); }
+
+    .rbadge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; padding: 4px 12px;
+      border-radius: 50px; white-space: nowrap;
+    }
+    .rb-friendly { background: var(--green-light); color: var(--green); }
+    .rb-moderate { background: var(--amber-light); color: var(--amber); }
+    .rb-restrictive { background: var(--red-light); color: var(--red); }
+
+    .regs-note { font-size: 12px; color: #94a3b8; margin-top: 12px; text-align: center; line-height: 1.6; }
+
+    /* ── TRUST ── */
+    .trust-section { max-width: 1120px; margin: 0 auto; padding: 8px 20px 48px; }
+    .trust-section h3 { font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 24px; letter-spacing: -0.3px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 720px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
+    .trust-item { background: var(--card); border-radius: var(--radius); padding: 20px; text-align: center; box-shadow: var(--shadow); }
+    .trust-icon { font-size: 26px; margin-bottom: 10px; }
+    .trust-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+    .trust-item p { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--card); border-top: 1px solid var(--border);
+      padding: 28px 40px; text-align: center;
+    }
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-copy { font-size: 12px; color: #94a3b8; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo"><span class="logo-host">Host</span><span class="logo-calc">Calc</span></a>
+  <nav class="header-nav">
+    <a href="#revenue" class="active">Revenue</a>
+    <a href="#expenses">Expenses</a>
+    <a href="#taxes">Taxes</a>
+    <a href="#regulations">Regulations</a>
+  </nav>
+</header>
+
+<div class="page">
+
+  <!-- TOP AD -->
+  <div class="ad-center">
+    <div class="ad-zone ad-leader">Advertisement — 728 × 90</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Free <em>Airbnb Income Calculator</em> &amp; STR Host Dashboard</h1>
+    <p>Calculate your potential earnings, estimate taxes, and check short-term rental regulations for all 50 states — everything hosts need, free and in one place.</p>
+    <div class="badges">
+      <span class="badge">📊 Revenue Calculator</span>
+      <span class="badge">💸 Expense Tracker</span>
+      <span class="badge">🧾 Tax Estimator</span>
+      <span class="badge">🗺️ STR Regulations — All 50 States</span>
+      <span class="badge">✅ Free Forever</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 1 — REVENUE CALCULATOR
+  ══════════════════════════════ -->
+  <div id="revenue" class="step1-outer">
+    <!-- Main card -->
+    <div class="section-card" style="margin-bottom:0;">
+      <div class="section-head">
+        <span class="step-pill">Step 1</span>
+        <h2>Revenue Calculator — How Much Can You Make on Airbnb?</h2>
+      </div>
+      <div class="step1-card-inner">
+        <!-- FORM -->
+        <div>
+          <div class="form-group">
+            <label class="form-label">Nightly Rate</label>
+            <div class="ig">
+              <span class="ig-sym">$</span>
+              <input class="ig-field" type="number" id="nightlyRate" value="120" min="0" oninput="calcRevenue()">
+            </div>
+            <div class="form-hint">Your average price per night. Check comparable listings in your area on Airbnb.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Occupancy Rate — <span id="occPct">66%</span></label>
+            <div class="slider-row">
+              <input type="range" id="occSlider" min="0" max="100" value="66" oninput="updateOcc(this.value)">
+              <span class="slider-badge" id="occBadge">66%</span>
+            </div>
+            <div class="form-hint">US STR average is ~55–65%. Beach/ski/urban markets often hit 75–85%.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Average Stay Length</label>
+            <div class="ig">
+              <input class="ig-field" type="number" id="avgStay" value="3" min="1" oninput="calcRevenue()">
+              <span class="ig-sym right">Nights</span>
+            </div>
+            <div class="form-hint">Longer stays = fewer turnovers, less cleaning cost.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Cleaning Fee (per stay)</label>
+            <div class="ig">
+              <span class="ig-sym">$</span>
+              <input class="ig-field" type="number" id="cleaningFee" value="75" min="0" oninput="calcRevenue()">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Airbnb Host Service Fee</label>
+            <div class="ig">
+              <input class="ig-field" type="number" id="hostFee" value="3" min="0" max="20" step="0.5" oninput="calcRevenue()">
+              <span class="ig-sym right">%</span>
+            </div>
+            <div class="form-hint">Airbnb charges hosts ~3% per booking under the split-fee model.</div>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div>
+          <div class="res-card">
+            <div class="res-title blue">📊 Monthly Estimate</div>
+            <div class="res-row"><span class="rl">Nights booked / mo.</span><span class="rv" id="r-nights">—</span></div>
+            <div class="res-row"><span class="rl">Stays / mo.</span><span class="rv" id="r-stays">—</span></div>
+            <div class="res-row"><span class="rl">Gross rental income</span><span class="rv" id="r-gross">—</span></div>
+            <div class="res-row"><span class="rl">Cleaning fee income</span><span class="rv" id="r-clean">—</span></div>
+            <div class="res-row"><span class="rl">Airbnb host fee</span><span class="rv" id="r-fee">—</span></div>
+            <div class="res-row"><span class="rl">Net monthly revenue</span><span class="rv big" id="r-net-mo">—</span></div>
+          </div>
+          <div class="res-card white">
+            <div class="res-title" style="color:#64748b;">📅 Annual Projection</div>
+            <div class="res-row"><span class="rl">Annual gross revenue</span><span class="rv" id="r-ann-gross">—</span></div>
+            <div class="res-row"><span class="rl">Annual Airbnb fees</span><span class="rv" id="r-ann-fees">—</span></div>
+            <div class="res-row"><span class="rl">Annual net revenue</span><span class="rv big" id="r-ann-net">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD COLUMN -->
+    <div class="ad-col">
+      <div class="ad-zone ad-rect">Advertisement — 300 × 250</div>
+      <div class="ad-zone ad-rect">Advertisement — 300 × 250</div>
+    </div>
+  </div>
+
+  <!-- MID AD -->
+  <div class="ad-center" style="padding: 24px 0;">
+    <div class="ad-zone ad-leader">Advertisement — 728 × 90</div>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 2 — EXPENSES & PROFIT
+  ══════════════════════════════ -->
+  <div id="expenses" class="section-card">
+    <div class="section-head">
+      <span class="step-pill">Step 2</span>
+      <h2>Expense Breakdown &amp; Net Profit Calculator</h2>
+    </div>
+    <div class="step-inner">
+      <!-- FORM -->
+      <div>
+        <div class="form-2col">
+          <div class="form-group">
+            <label class="form-label">Mortgage / Rent (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-mortgage" value="1800" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Utilities (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-utilities" value="200" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">STR Insurance (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-insurance" value="150" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cleaning Cost (per stay)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-cleaning" value="60" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Supplies / Toiletries (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-supplies" value="80" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Maintenance Reserve (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-maintenance" value="100" min="0" oninput="calcExpenses()"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Property Mgmt. Fee</label>
+            <div class="ig"><input class="ig-field" type="number" id="e-mgmt" value="0" min="0" max="40" oninput="calcExpenses()"><span class="ig-sym right">% of rev.</span></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Other Expenses (mo.)</label>
+            <div class="ig"><span class="ig-sym">$</span><input class="ig-field" type="number" id="e-other" value="50" min="0" oninput="calcExpenses()"></div>
+          </div>
+        </div>
+        <div class="form-hint">Revenue is pulled from Step 1 automatically. <a href="#revenue" style="color:var(--blue);font-weight:500;">Adjust above ↑</a></div>
+      </div>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="res-card">
+          <div class="res-title blue">💰 Monthly Expenses</div>
+          <div class="res-row"><span class="rl">Mortgage / Rent</span><span class="rv" id="e-r-mortgage">—</span></div>
+          <div class="res-row"><span class="rl">Utilities</span><span class="rv" id="e-r-utilities">—</span></div>
+          <div class="res-row"><span class="rl">Insurance</span><span class="rv" id="e-r-insurance">—</span></div>
+          <div class="res-row"><span class="rl">Cleaning costs</span><span class="rv" id="e-r-cleaning">—</span></div>
+          <div class="res-row"><span class="rl">Supplies</span><span class="rv" id="e-r-supplies">—</span></div>
+          <div class="res-row"><span class="rl">Maintenance</span><span class="rv" id="e-r-maintenance">—</span></div>
+          <div class="res-row"><span class="rl">Mgmt. fee</span><span class="rv" id="e-r-mgmt">—</span></div>
+          <div class="res-row"><span class="rl">Other</span><span class="rv" id="e-r-other">—</span></div>
+          <div class="res-row"><span class="rl" style="font-weight:600;">Total expenses</span><span class="rv" id="e-r-total" style="font-weight:700;">—</span></div>
+        </div>
+        <div class="profit-box" id="profit-box">
+          <div class="pb-left">
+            <div class="pb-label" id="pb-label">Monthly Net Profit</div>
+            <div class="pb-sub" id="pb-sub">Calculating…</div>
+          </div>
+          <div class="pb-value" id="e-r-net">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MID AD -->
+  <div class="ad-center" style="padding: 0 0 24px;">
+    <div class="ad-zone ad-leader">Advertisement — 728 × 90</div>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 3 — TAX ESTIMATOR
+  ══════════════════════════════ -->
+  <div id="taxes" class="section-card">
+    <div class="section-head">
+      <span class="step-pill">Step 3</span>
+      <h2>STR Tax Estimator</h2>
+    </div>
+    <div class="step-inner">
+      <!-- FORM -->
+      <div>
+        <div class="form-2col">
+          <div class="form-group">
+            <label class="form-label">State (for occupancy tax rate)</label>
+            <div class="ig">
+              <select class="ig-field" id="t-state" onchange="calcTax()">
+                <option value="" data-rate="0">— Select your state —</option>
+                <option value="AL" data-rate="0.06">Alabama (~6%)</option>
+                <option value="AK" data-rate="0.03">Alaska (~3%)</option>
+                <option value="AZ" data-rate="0.12">Arizona (~12%)</option>
+                <option value="AR" data-rate="0.065">Arkansas (~6.5%)</option>
+                <option value="CA" data-rate="0.12">California (~12%)</option>
+                <option value="CO" data-rate="0.10">Colorado (~10%)</option>
+                <option value="CT" data-rate="0.15">Connecticut (15%)</option>
+                <option value="DE" data-rate="0.08">Delaware (8%)</option>
+                <option value="FL" data-rate="0.115">Florida (~11.5%)</option>
+                <option value="GA" data-rate="0.08">Georgia (~8%)</option>
+                <option value="HI" data-rate="0.1425">Hawaii (14.25%+)</option>
+                <option value="ID" data-rate="0.08">Idaho (~8%)</option>
+                <option value="IL" data-rate="0.10">Illinois (~10%)</option>
+                <option value="IN" data-rate="0.09">Indiana (~9%)</option>
+                <option value="IA" data-rate="0.12">Iowa (~12%)</option>
+                <option value="KS" data-rate="0.09">Kansas (~9%)</option>
+                <option value="KY" data-rate="0.07">Kentucky (~7%)</option>
+                <option value="LA" data-rate="0.10">Louisiana (~10%)</option>
+                <option value="ME" data-rate="0.09">Maine (9%)</option>
+                <option value="MD" data-rate="0.10">Maryland (~10%)</option>
+                <option value="MA" data-rate="0.117">Massachusetts (~11.7%)</option>
+                <option value="MI" data-rate="0.07">Michigan (~7%)</option>
+                <option value="MN" data-rate="0.099">Minnesota (~9.9%)</option>
+                <option value="MS" data-rate="0.07">Mississippi (~7%)</option>
+                <option value="MO" data-rate="0.07">Missouri (~7%)</option>
+                <option value="MT" data-rate="0.07">Montana (7%)</option>
+                <option value="NE" data-rate="0.07">Nebraska (~7%)</option>
+                <option value="NV" data-rate="0.13">Nevada (~13%)</option>
+                <option value="NH" data-rate="0.09">New Hampshire (9%)</option>
+                <option value="NJ" data-rate="0.116">New Jersey (~11.6%)</option>
+                <option value="NM" data-rate="0.09">New Mexico (~9%)</option>
+                <option value="NY" data-rate="0.15">New York (~15%)</option>
+                <option value="NC" data-rate="0.11">North Carolina (~11%)</option>
+                <option value="ND" data-rate="0.07">North Dakota (~7%)</option>
+                <option value="OH" data-rate="0.10">Ohio (~10%)</option>
+                <option value="OK" data-rate="0.065">Oklahoma (~6.5%)</option>
+                <option value="OR" data-rate="0.115">Oregon (~11.5%)</option>
+                <option value="PA" data-rate="0.09">Pennsylvania (~9%)</option>
+                <option value="RI" data-rate="0.12">Rhode Island (12%)</option>
+                <option value="SC" data-rate="0.085">South Carolina (~8.5%)</option>
+                <option value="SD" data-rate="0.06">South Dakota (6%)</option>
+                <option value="TN" data-rate="0.095">Tennessee (~9.5%)</option>
+                <option value="TX" data-rate="0.13">Texas (~13%)</option>
+                <option value="UT" data-rate="0.08">Utah (~8%)</option>
+                <option value="VT" data-rate="0.09">Vermont (9%)</option>
+                <option value="VA" data-rate="0.10">Virginia (~10%)</option>
+                <option value="WA" data-rate="0.12">Washington (~12%)</option>
+                <option value="WV" data-rate="0.07">West Virginia (~7%)</option>
+                <option value="WI" data-rate="0.08">Wisconsin (~8%)</option>
+                <option value="WY" data-rate="0.06">Wyoming (6%)</option>
+              </select>
+            </div>
+            <div class="form-hint">Leave blank to use Step 1 result automatically.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tax Filing Status</label>
+            <div class="ig">
+              <select class="ig-field" id="t-filing" onchange="calcTax()">
+                <option value="single">Single</option>
+                <option value="mfj">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Annual STR Gross Revenue</label>
+            <div class="ig">
+              <span class="ig-sym">$</span>
+              <input class="ig-field" type="number" id="t-income" placeholder="Auto-filled from Step 1" min="0" oninput="calcTax()">
+            </div>
+            <div class="form-hint">Leave blank to use Step 1 result automatically.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Deductible STR Expenses (annual)</label>
+            <div class="ig">
+              <span class="ig-sym">$</span>
+              <input class="ig-field" type="number" id="t-deductions" placeholder="Auto-filled from Step 2" min="0" oninput="calcTax()">
+            </div>
+            <div class="form-hint">Mortgage interest, depreciation, repairs, insurance, supplies all deductible.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Other Annual Income (salary, etc.)</label>
+          <div class="ig" style="max-width:320px;">
+            <span class="ig-sym">$</span>
+            <input class="ig-field" type="number" id="t-other-income" value="60000" min="0" oninput="calcTax()">
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          ⚠️ <strong>Estimate ONLY</strong> — not tax advice. STR tax laws vary significantly by state and municipality. Consult a CPA who specializes in short-term rentals for your specific situation.
+        </div>
+        <div class="tip-line">💡 <strong>14-Day Rule:</strong> Rent fewer than 15 days/year and STR income is completely tax-free (IRC §280A).</div>
+      </div>
+
+      <!-- RESULTS -->
+      <div>
+        <div class="res-card">
+          <div class="res-title blue">🗓️ Tax Breakdown</div>
+          <div class="res-row"><span class="rl">Gross STR income</span><span class="rv" id="t-r-gross">—</span></div>
+          <div class="res-row"><span class="rl">Deductible expenses</span><span class="rv" id="t-r-deduct">—</span></div>
+          <div class="res-row"><span class="rl">Net taxable STR income</span><span class="rv" id="t-r-taxable">—</span></div>
+          <div class="res-row"><span class="rl">Occupancy / lodging tax</span><span class="rv" id="t-r-occ">—</span></div>
+          <div class="res-row"><span class="rl">Est. federal income tax</span><span class="rv" id="t-r-fed">—</span></div>
+          <div class="res-row"><span class="rl">Effective rate on STR income</span><span class="rv" id="t-r-eff">—</span></div>
+        </div>
+        <div class="res-card red-bg">
+          <div class="res-title amber">🔥 Est. Take-Home</div>
+          <div class="res-row"><span class="rl">Annual net revenue</span><span class="rv" id="t-r-net-rev">—</span></div>
+          <div class="res-row"><span class="rl">Total est. tax burden</span><span class="rv" id="t-r-total-tax">—</span></div>
+          <div class="res-row"><span class="rl"><strong>Estimated take-home</strong></span><span class="rv green" id="t-r-takehome">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MID AD -->
+  <div class="ad-center" style="padding: 0 0 24px;">
+    <div class="ad-zone ad-leader">Advertisement — 728 × 90</div>
+  </div>
+
+  <!-- ══════════════════════════════
+       STEP 4 — REGULATIONS TABLE
+  ══════════════════════════════ -->
+  <div id="regulations" class="section-card">
+    <div class="section-head">
+      <span class="step-pill">Step 4</span>
+      <h2>Short-Term Rental Regulations — All 50 States</h2>
+    </div>
+
+    <div class="regs-filters">
+      <div class="regs-search-wrap">
+        <div class="ig"><input class="ig-field" type="text" id="regs-search" placeholder="Search by state name…" oninput="filterRegs()"></div>
+      </div>
+      <div class="filter-pills">
+        <button class="fp active-all" onclick="setFilter('all',this)">All States</button>
+        <button class="fp" onclick="setFilter('friendly',this)">● Host-Friendly</button>
+        <button class="fp" onclick="setFilter('moderate',this)">● Moderate</button>
+        <button class="fp" onclick="setFilter('restrictive',this)">● Restrictive</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Permit / License</th>
+            <th>Occ. Tax Rate</th>
+            <th>Key Notes</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody id="regs-tbody"></tbody>
+      </table>
+    </div>
+    <p class="regs-note">⚠️ Regulations change frequently. Always verify current rules with your local city or county and consult a local attorney before listing. Data reviewed April 2026.</p>
+  </div>
+
+</div><!-- /page -->
+
+<!-- TRUST SECTION -->
+<div class="trust-section">
+  <h3>Why STR Hosts Trust HostCalc</h3>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-icon">🔒</div>
+      <h4>100% Private</h4>
+      <p>All calculations run in your browser. No data is stored or sent anywhere.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      <h4>Real-Time Results</h4>
+      <p>Every number updates instantly as you type. No forms to submit.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🗺️</div>
+      <h4>All 50 States</h4>
+      <p>STR regulations and occupancy tax rates for every U.S. state in one place.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">💯</div>
+      <h4>Always Free</h4>
+      <p>No signup, no subscription, no hidden fees. Free forever, supported by advertising.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM AD -->
+<div style="display:flex; justify-content:center; padding: 0 20px 32px;">
+  <div class="ad-zone ad-leader">Advertisement — 728 × 90</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Dashboard</a>
+      <a href="faq.html">FAQs</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+    <div class="footer-copy">
+      HostCalc © 2026 — Free Airbnb income calculator &amp; STR host dashboard.<br>
+      Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── UTILS ──────────────────────────────
+const $  = id => document.getElementById(id);
+const fmt = n => '$' + Math.round(Math.abs(n)).toLocaleString('en-US');
+function num(id) { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; }
+
+let lastNetMo       = 0;
+let lastAnnGross    = 0;
+let lastAnnExpenses = 0;
+
+// ── REVENUE ────────────────────────────
+function updateOcc(v) {
+  $('occPct').textContent  = v + '%';
+  $('occBadge').textContent = v + '%';
+  calcRevenue();
+}
+
+function calcRevenue() {
+  const nightly  = num('nightlyRate');
+  const occ      = num('occSlider') / 100;
+  const stay     = Math.max(1, num('avgStay'));
+  const cleaning = num('cleaningFee');
+  const feeR     = num('hostFee') / 100;
+
+  const nightsMo  = 30.4 * occ;
+  const staysMo   = nightsMo / stay;
+  const gross     = nightly * nightsMo;
+  const cleanInc  = cleaning * staysMo;
+  const feeAmt    = gross * feeR;
+  const netMo     = gross + cleanInc - feeAmt;
+  const annGross  = (gross + cleanInc) * 12;
+  const annFees   = feeAmt * 12;
+  const annNet    = netMo * 12;
+
+  $('r-nights').textContent  = nightsMo.toFixed(1);
+  $('r-stays').textContent   = staysMo.toFixed(1);
+  $('r-gross').textContent   = fmt(gross);
+  $('r-clean').textContent   = fmt(cleanInc);
+  $('r-fee').textContent     = '–' + fmt(feeAmt);
+  $('r-net-mo').textContent  = fmt(netMo);
+  $('r-ann-gross').textContent = fmt(annGross);
+  $('r-ann-fees').textContent  = '–' + fmt(annFees);
+  $('r-ann-net').textContent   = fmt(annNet);
+
+  lastNetMo    = netMo;
+  lastAnnGross = annGross;
+  calcExpenses();
+  calcTax();
+}
+
+// ── EXPENSES ───────────────────────────
+function calcExpenses() {
+  const occ   = num('occSlider') / 100;
+  const stay  = Math.max(1, num('avgStay'));
+  const stays = (30.4 * occ) / stay;
+
+  const mortgage  = num('e-mortgage');
+  const utilities = num('e-utilities');
+  const insurance = num('e-insurance');
+  const cleanCost = num('e-cleaning') * stays;
+  const supplies  = num('e-supplies');
+  const maint     = num('e-maintenance');
+  const mgmt      = lastNetMo * (num('e-mgmt') / 100);
+  const other     = num('e-other');
+  const total     = mortgage + utilities + insurance + cleanCost + supplies + maint + mgmt + other;
+  const net       = lastNetMo - total;
+  const annProfit = net * 12;
+
+  lastAnnExpenses = total * 12;
+
+  $('e-r-mortgage').textContent   = fmt(mortgage);
+  $('e-r-utilities').textContent  = fmt(utilities);
+  $('e-r-insurance').textContent  = fmt(insurance);
+  $('e-r-cleaning').textContent   = fmt(cleanCost);
+  $('e-r-supplies').textContent   = fmt(supplies);
+  $('e-r-maintenance').textContent= fmt(maint);
+  $('e-r-mgmt').textContent       = fmt(mgmt);
+  $('e-r-other').textContent      = fmt(other);
+  $('e-r-total').textContent      = fmt(total);
+
+  const box   = $('profit-box');
+  const netEl = $('e-r-net');
+  const isPos = net >= 0;
+
+  netEl.textContent    = fmt(net);
+  netEl.style.color    = isPos ? 'var(--green)' : 'var(--red)';
+  box.style.background = isPos ? 'var(--green-light)' : 'var(--red-light)';
+  box.style.border     = isPos ? '1px solid rgba(22,163,74,0.2)' : '1px solid rgba(220,38,38,0.2)';
+  box.style.borderRadius = '12px';
+  $('pb-label').style.color = isPos ? '#166534' : '#991b1b';
+  $('pb-sub').style.color   = isPos ? '#166534' : '#991b1b';
+  $('pb-sub').textContent   = isPos
+    ? '≈ ' + fmt(annProfit) + ' estimated annual profit'
+    : fmt(Math.abs(annProfit)) + ' annual loss — adjust inputs above';
+
+  calcTax();
+}
+
+// ── TAXES ──────────────────────────────
+function fedTax(taxable, filing) {
+  const b = {
+    single: [[11600,0.10],[47150,0.12],[100525,0.22],[191950,0.24],[243725,0.32],[609350,0.35],[Infinity,0.37]],
+    mfj:    [[23200,0.10],[94300,0.12],[201050,0.22],[383900,0.24],[487450,0.32],[731200,0.35],[Infinity,0.37]],
+    hoh:    [[16550,0.10],[63100,0.12],[100500,0.22],[191950,0.24],[243700,0.32],[609350,0.35],[Infinity,0.37]]
+  }[filing];
+  let tax = 0, prev = 0;
+  for (const [lim, rate] of b) {
+    if (taxable <= prev) break;
+    tax += (Math.min(taxable, lim) - prev) * rate;
+    prev = lim;
+  }
+  return tax;
+}
+
+function calcTax() {
+  const sel      = $('t-state');
+  const occRate  = parseFloat(sel.options[sel.selectedIndex].dataset.rate) || 0;
+  const filing   = $('t-filing').value;
+  const gross    = $('t-income').value.trim() ? num('t-income') : lastAnnGross;
+  const otherInc = num('t-other-income');
+  const deduct   = $('t-deductions').value.trim() ? num('t-deductions') : lastAnnExpenses;
+  const stdDed   = { single: 14600, mfj: 29200, hoh: 21900 }[filing];
+
+  const occTax   = gross * occRate;
+  const netSTR   = Math.max(0, gross - deduct);
+  const withSTR  = Math.max(0, otherInc + netSTR - stdDed);
+  const without  = Math.max(0, otherInc - stdDed);
+  const strFed   = fedTax(withSTR, filing) - fedTax(without, filing);
+  const total    = occTax + strFed;
+  const annNet   = lastNetMo * 12;
+  const takeHome = annNet - total;
+  const eff      = gross > 0 ? (total / gross * 100) : 0;
+
+  $('t-r-gross').textContent     = fmt(gross);
+  $('t-r-deduct').textContent    = fmt(deduct);
+  $('t-r-taxable').textContent   = fmt(netSTR);
+  $('t-r-occ').textContent       = occRate > 0 ? fmt(occTax) + ` (${(occRate*100).toFixed(1)}%)` : '— select state above';
+  $('t-r-fed').textContent       = fmt(strFed);
+  $('t-r-eff').textContent       = eff.toFixed(1) + '%';
+  $('t-r-net-rev').textContent   = fmt(annNet);
+  $('t-r-total-tax').textContent = fmt(total);
+  $('t-r-takehome').textContent  = fmt(takeHome);
+}
+
+// ── REGULATIONS ────────────────────────
+const states = [
+  { s:"Alabama",       permit:"Varies by city",          tax:"~6%",      notes:"Auburn, Gulf Shores, and Orange Beach have permit requirements. Check local ordinances.", r:"moderate" },
+  { s:"Alaska",        permit:"No state requirement",    tax:"Local only",notes:"Most areas unregulated. Anchorage and Juneau have some local rules. Very permissive overall.", r:"friendly" },
+  { s:"Arizona",       permit:"Yes — state license",     tax:"~12%",     notes:"State law (ARS 9-500.39) bans cities from prohibiting STRs. License + safety inspection required.", r:"friendly" },
+  { s:"Arkansas",      permit:"Varies",                  tax:"~6.5%",    notes:"No statewide STR law. Hot Springs and Eureka Springs have local permit requirements.", r:"moderate" },
+  { s:"California",    permit:"Varies by city",          tax:"8–15%",    notes:"SF: 90-night cap, permit required. LA: primary residence only. Palm Springs and Big Bear have strict rules.", r:"restrictive" },
+  { s:"Colorado",      permit:"Yes — local license",     tax:"~10%",     notes:"Denver: STR license + inspection required. Mountain towns (Vail, Breckenridge) have strict caps.", r:"moderate" },
+  { s:"Connecticut",   permit:"Registration required",   tax:"15%",      notes:"Statewide registration required. Some cities limit non-owner-occupied STRs.", r:"moderate" },
+  { s:"Delaware",      permit:"No state requirement",    tax:"8%",       notes:"No statewide STR law. Rehoboth Beach and Lewes have some seasonal local rules.", r:"friendly" },
+  { s:"Florida",       permit:"Yes — DBPR license",      tax:"~11.5%",   notes:"State preempts local bans (pre-2011 grandfathered). DBPR license required. County-level rules vary.", r:"friendly" },
+  { s:"Georgia",       permit:"Varies by city",          tax:"~8%",      notes:"Atlanta requires permit. Savannah and Tybee Island have growing regulations. Generally permissive statewide.", r:"moderate" },
+  { s:"Hawaii",        permit:"Yes — NUC required",      tax:"14.25%+",  notes:"Oahu and Maui extremely restrictive. Maui banned new non-hosted STR permits. TAT + GET = 14.25%+ tax burden.", r:"restrictive" },
+  { s:"Idaho",         permit:"Varies",                  tax:"~8%",      notes:"State limits some local STR restrictions. Sun Valley and Coeur d'Alene have permit requirements.", r:"friendly" },
+  { s:"Illinois",      permit:"Yes — Chicago license",   tax:"~10–17%",  notes:"Chicago: 200ft buffer from schools/churches, insurance required, license required. Rest of state more permissive.", r:"moderate" },
+  { s:"Indiana",       permit:"Yes — county innkeeper",  tax:"~9%",      notes:"County innkeeper's license required. Some cities limiting non-owner-occupied STRs.", r:"moderate" },
+  { s:"Iowa",          permit:"Varies",                  tax:"~12%",     notes:"No statewide STR law. Des Moines and Iowa City have some local regulations.", r:"moderate" },
+  { s:"Kansas",        permit:"Varies",                  tax:"~9%",      notes:"No statewide STR law. Kansas City (KS) and Wichita have developing regulations.", r:"moderate" },
+  { s:"Kentucky",      permit:"Varies by city",          tax:"~7%",      notes:"Louisville requires STR permit. Lexington has neighborhood-level restrictions.", r:"moderate" },
+  { s:"Louisiana",     permit:"Yes — required",          tax:"~10–16%",  notes:"New Orleans: commercial license required, neighborhood caps, complex permitting process. Rest of state varies.", r:"restrictive" },
+  { s:"Maine",         permit:"Yes — registration",      tax:"9%",       notes:"Statewide registration required since 2021. Portland caps non-owner-occupied units. Coastal areas tightening.", r:"moderate" },
+  { s:"Maryland",      permit:"Varies by county",        tax:"~10%",     notes:"Baltimore City requires license. Ocean City and Montgomery County have specific regulations.", r:"moderate" },
+  { s:"Massachusetts", permit:"Yes — registration",      tax:"~11.7%",   notes:"Statewide registration and liability insurance required. Boston limits investor-owned STRs.", r:"moderate" },
+  { s:"Michigan",      permit:"Varies",                  tax:"~7%",      notes:"2023 law limits some local restrictions. Traverse City and resort towns have permit requirements.", r:"friendly" },
+  { s:"Minnesota",     permit:"Varies by city",          tax:"~9.9%",    notes:"Minneapolis requires license + inspection. St. Paul has caps. Lake vacation properties generally permissive.", r:"moderate" },
+  { s:"Mississippi",   permit:"Varies",                  tax:"~7%",      notes:"No statewide STR law. Gulf Coast and Oxford developing some local regulations.", r:"moderate" },
+  { s:"Missouri",      permit:"Varies by city",          tax:"~7%",      notes:"Kansas City and St. Louis have permit requirements. Branson has its own regulations.", r:"moderate" },
+  { s:"Montana",       permit:"No state requirement",    tax:"7%",       notes:"No statewide STR law. Whitefish, Bozeman, and Missoula developing local regulations. Generally permissive.", r:"friendly" },
+  { s:"Nebraska",      permit:"Varies",                  tax:"~7%",      notes:"No statewide STR law. Omaha has some permit requirements. Most areas unregulated.", r:"moderate" },
+  { s:"Nevada",        permit:"Yes — business license",  tax:"~13%",     notes:"Business license required statewide. Las Vegas Strip area strict zoning. Henderson and NLV more permissive.", r:"moderate" },
+  { s:"New Hampshire", permit:"No state requirement",    tax:"9%",       notes:"No statewide STR law. Some towns restrict STRs in residential zones. Generally host-friendly.", r:"friendly" },
+  { s:"New Jersey",    permit:"Varies by town",          tax:"~11.6%",   notes:"Jersey Shore towns have seasonal permits. Hoboken and Jersey City require licenses.", r:"moderate" },
+  { s:"New Mexico",    permit:"Varies",                  tax:"~9%",      notes:"Santa Fe requires STR permit with caps on non-owner units. Taos developing regulations.", r:"moderate" },
+  { s:"New York",      permit:"Yes — NYC very strict",   tax:"~15%",     notes:"NYC STAA (2023): must register, host must be present for <30-night rentals, max 2 guests. Upstate more permissive.", r:"restrictive" },
+  { s:"North Carolina",permit:"Varies",                  tax:"~11%",     notes:"OBX, Wilmington, and Asheville have permit requirements. Charlotte tightening. No statewide law.", r:"moderate" },
+  { s:"North Dakota",  permit:"No state requirement",    tax:"~7%",      notes:"No statewide STR law. Very few local regulations. One of the most permissive states.", r:"friendly" },
+  { s:"Ohio",          permit:"Varies by city",          tax:"~10%",     notes:"Columbus and Cleveland require STR permits. Hocking Hills and Lake Erie areas popular.", r:"moderate" },
+  { s:"Oklahoma",      permit:"Varies",                  tax:"~6.5%",    notes:"No statewide STR law. Oklahoma City developing some STR rules. Generally permissive.", r:"moderate" },
+  { s:"Oregon",        permit:"Yes — Portland strict",   tax:"~11.5%",   notes:"Portland: primary residence only, annual registration, strict enforcement. Eugene and Bend developing regulations.", r:"restrictive" },
+  { s:"Pennsylvania",  permit:"Varies by city",          tax:"~9%",      notes:"Philadelphia: very limited STR permits, strict enforcement. Pittsburgh more permissive. Poconos developing rules.", r:"moderate" },
+  { s:"Rhode Island",  permit:"No state requirement",    tax:"12%",      notes:"No statewide STR law. Newport has some local restrictions. Providence developing regulations.", r:"moderate" },
+  { s:"South Carolina",permit:"Yes — license required",  tax:"~8.5%",    notes:"Accommodations tax license required statewide. Hilton Head and Myrtle Beach have additional local requirements.", r:"moderate" },
+  { s:"South Dakota",  permit:"No state requirement",    tax:"6%",       notes:"No statewide STR law. Very few local regulations. Mount Rushmore and Badlands areas popular and permissive.", r:"friendly" },
+  { s:"Tennessee",     permit:"Yes — permit required",   tax:"~9.5%",    notes:"Nashville: non-owner-occupied STRs largely banned (2023); owner-occupied require permit. Gatlinburg more permissive.", r:"moderate" },
+  { s:"Texas",         permit:"Varies by city",          tax:"~13%",     notes:"Austin bans non-owner STRs in residential zones. Houston and Dallas more permissive. State generally host-friendly.", r:"friendly" },
+  { s:"Utah",          permit:"Varies by city",          tax:"~8%",      notes:"Park City, Moab, and ski resort areas have strict permit requirements and caps. Salt Lake City developing rules.", r:"moderate" },
+  { s:"Vermont",       permit:"No state requirement",    tax:"9%",       notes:"No statewide STR law. Some towns restrict STRs in residential zones. Ski towns (Stowe, Killington) very popular.", r:"moderate" },
+  { s:"Virginia",      permit:"Varies by locality",      tax:"~10%",     notes:"Virginia Beach and NoVa localities require permits. Richmond developing rules. Generally moderate statewide.", r:"moderate" },
+  { s:"Washington",    permit:"Yes — Seattle required",  tax:"~12%",     notes:"Seattle requires business license + STR license. Spokane and other cities developing regulations.", r:"moderate" },
+  { s:"West Virginia", permit:"No state requirement",    tax:"~7%",      notes:"No statewide STR law. Very few local regulations. Snowshoe and Seneca Rocks areas popular.", r:"friendly" },
+  { s:"Wisconsin",     permit:"Varies",                  tax:"~8%",      notes:"Door County, Lake Geneva, and Wisconsin Dells have permit requirements. State limits some local STR bans.", r:"moderate" },
+  { s:"Wyoming",       permit:"No state requirement",    tax:"6%",       notes:"No statewide STR law. Jackson Hole area developing rules due to housing pressure. Generally permissive.", r:"friendly" }
+];
+
+let activeFilter = 'all';
+
+function buildTable(data) {
+  const tbody = $('regs-tbody');
+  tbody.innerHTML = '';
+  data.forEach(row => {
+    const labels = { friendly:'Host-Friendly', moderate:'Moderate', restrictive:'Restrictive' };
+    const tr = document.createElement('tr');
+    tr.dataset.r = row.r;
+    tr.dataset.s = row.s.toLowerCase();
+    tr.innerHTML = `
+      <td>${row.s}</td>
+      <td style="color:#475569;">${row.permit}</td>
+      <td style="font-weight:600;">${row.tax}</td>
+      <td style="color:#475569; font-size:12px; line-height:1.5;">${row.notes}</td>
+      <td><span class="rbadge rb-${row.r}">${labels[row.r]}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function filterRegs() {
+  const q = $('regs-search').value.toLowerCase();
+  document.querySelectorAll('#regs-tbody tr').forEach(tr => {
+    const ms = tr.dataset.s.includes(q);
+    const mf = activeFilter === 'all' || tr.dataset.r === activeFilter;
+    tr.style.display = ms && mf ? '' : 'none';
+  });
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.fp').forEach(p => {
+    p.className = 'fp';
+    if (p === btn) p.classList.add('active-' + f);
+  });
+  filterRegs();
+}
+
+// ── NAV HIGHLIGHT ──────────────────────
+function updateNav() {
+  const ids = ['revenue','expenses','taxes','regulations'];
+  const y   = window.scrollY + 90;
+  let cur   = 'revenue';
+  ids.forEach(id => { const el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
+  document.querySelectorAll('.header-nav a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+}
+
+// ── INIT ───────────────────────────────
+buildTable(states);
+calcRevenue();
+window.addEventListener('scroll', updateNav, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — HostCalc | Airbnb Income Calculator Help</title>
+  <meta name="description" content="Frequently asked questions about HostCalc — the free Airbnb income calculator, STR profit estimator, and short-term rental tax tool for hosts.">
+  <link rel="canonical" href="https://hostcalc.co/faq.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #1f4fff;
+      --blue-light: #eef2ff;
+      --bg: #eef1f5;
+      --border: #e0e4ea;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --radius: 14px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.07), 0 2px 12px rgba(0,0,0,0.04);
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--bg);
+      padding: 0 40px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .logo { font-size: 22px; font-weight: 700; text-decoration: none; letter-spacing: -0.5px; }
+    .logo-host { color: var(--text); }
+    .logo-calc { color: var(--blue); }
+    .header-nav a {
+      font-size: 14px; font-weight: 500;
+      color: var(--blue); text-decoration: none;
+      padding: 7px 18px; border-radius: 50px;
+      border: 1.5px solid var(--blue);
+      transition: all 0.15s;
+    }
+    .header-nav a:hover { background: var(--blue); color: #fff; }
+
+    /* AD ZONES */
+    .ad-zone {
+      background: #fff; border: 1.5px dashed #d0d5dd;
+      display: flex; align-items: center; justify-content: center;
+      color: #b0b8c4; font-size: 12px; border-radius: 10px;
+    }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 16px 20px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      text-align: center;
+      padding: 36px 20px 24px;
+    }
+    .page-hero h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.6px; margin-bottom: 8px; }
+    .page-hero p { font-size: 15px; color: var(--muted); }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 16px 20px 64px;
+    }
+
+    /* FAQ ITEM */
+    .faq-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-group-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      padding: 18px 24px 4px;
+    }
+    details {
+      border-top: 1px solid var(--border);
+    }
+    details:first-of-type { border-top: none; }
+    summary {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      padding: 16px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      list-style: none;
+      transition: background 0.12s;
+    }
+    summary:hover { background: #f8fafc; }
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.75;
+    }
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+    .faq-body a { color: var(--blue); text-decoration: none; }
+    .faq-body a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      background: var(--card); border-top: 1px solid var(--border);
+      padding: 28px 40px; text-align: center;
+    }
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-copy { font-size: 12px; color: #94a3b8; line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <span class="logo-host">Host</span><span class="logo-calc">Calc</span>
+  </a>
+  <nav class="header-nav"><a href="index.html">← Back to Dashboard</a></nav>
+</header>
+
+<!-- TOP AD -->
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know about using HostCalc</p>
+</div>
+
+<div class="content-wrap">
+
+  <!-- INCOME CALCULATOR -->
+  <div class="faq-group">
+    <div class="faq-group-title">Income Calculator</div>
+
+    <details>
+      <summary>How does the Airbnb income calculator work?</summary>
+      <div class="faq-body">
+        <p>Enter your nightly rate, estimated occupancy rate (the % of nights per month you expect to be booked), number of bedrooms, and your city/market. The calculator estimates your gross monthly and annual revenue based on those inputs, then deducts platform fees and your operating costs to show your net profit.</p>
+        <p>All calculations happen instantly in your browser — nothing is ever sent to our servers.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What occupancy rate should I use?</summary>
+      <div class="faq-body">
+        <p>A reasonable starting estimate for most markets is 60–70%. High-demand urban markets or beach destinations can reach 75–85%. Rural or secondary markets may land closer to 45–60%.</p>
+        <p>Check AirDNA, Mashvisor, or your local host community for data specific to your neighborhood — occupancy varies significantly by zip code.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does this calculator include Airbnb's service fees?</summary>
+      <div class="faq-body">
+        <p>Yes. The calculator deducts the standard Airbnb host service fee (typically 3% for most hosts) from your gross revenue automatically. If you are on a split-fee or non-standard arrangement, you can adjust the percentage in the expenses section.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How accurate is the income estimate?</summary>
+      <div class="faq-body">
+        <p>The calculator provides an estimate based on the numbers you enter — it is as accurate as those inputs. Actual Airbnb income depends on your listing quality, photos, reviews, seasonal demand, local competition, pricing strategy, and many other factors. Use this tool for ballpark planning, not guaranteed projections.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- EXPENSES & PROFIT -->
+  <div class="faq-group">
+    <div class="faq-group-title">Expenses & Profit</div>
+
+    <details>
+      <summary>What expenses should I include in my STR calculations?</summary>
+      <div class="faq-body">
+        <p>Common short-term rental expenses include: mortgage or rent, property management fees (if applicable), cleaning fees per turnover, utilities (electricity, water, gas, internet), supplies and consumables (toiletries, coffee, linens), insurance (STR-specific policy or Airbnb AirCover supplement), maintenance and repairs, furnishing amortization, HOA fees, and property taxes.</p>
+        <p>Step 2 of the HostCalc dashboard lets you enter all of these to calculate your true net profit margin.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is a good profit margin for a short-term rental?</summary>
+      <div class="faq-body">
+        <p>A healthy STR profit margin after all expenses (but before income taxes) is typically 20–40%. Margins below 15% are considered thin and leave little buffer for vacancies or unexpected repairs. Margins above 50% are excellent and usually occur in high-demand markets with low mortgage payments or paid-off properties.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Should I include cleaning fees as income or deduct them?</summary>
+      <div class="faq-body">
+        <p>On Airbnb, guests pay your cleaning fee directly and it appears as part of your revenue. However, if you pay a cleaner, that cost is a direct expense. In HostCalc, enter the gross revenue (including cleaning fees) and then add your cleaning cost as an expense for an accurate net profit picture.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- TAXES -->
+  <div class="faq-group">
+    <div class="faq-group-title">STR Tax Calculator</div>
+
+    <details>
+      <summary>What taxes do Airbnb hosts pay?</summary>
+      <div class="faq-body">
+        <p>Airbnb hosts typically owe several types of taxes: (1) <strong>Federal income tax</strong> on net rental income, (2) <strong>State income tax</strong> where applicable, (3) <strong>Occupancy / lodging taxes</strong> (also called transient occupancy tax or hotel tax) — Airbnb collects and remits these in many jurisdictions automatically, (4) <strong>Self-employment tax</strong> if the rental is considered a business rather than passive investment income.</p>
+        <p>The HostCalc tax estimator provides a rough federal + state estimate. Always consult a CPA for your specific situation.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does Airbnb collect and remit occupancy taxes for me?</summary>
+      <div class="faq-body">
+        <p>In many cities and states, yes — Airbnb collects and remits local occupancy taxes on your behalf. However, coverage is not universal and rules change frequently. You are responsible for confirming your local requirements. Check Airbnb's tax collection page and your local government's website to verify.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is the 14-day rule for Airbnb hosts?</summary>
+      <div class="faq-body">
+        <p>Under IRS rules (Section 280A), if you rent your home for 14 days or fewer per year, the rental income is tax-free and you do not need to report it. If you rent for more than 14 days, all rental income is taxable and you can deduct rental expenses proportionally. This is sometimes called the "Masters exception" or "vacation home rule."</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I deduct my mortgage interest as an STR host?</summary>
+      <div class="faq-body">
+        <p>Yes — mortgage interest is generally deductible against STR rental income for the portion of the year the property is rented. If you also use the property personally, expenses must be allocated between personal and rental use. The deductibility rules are complex; work with a tax professional who specializes in real estate.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- REGULATIONS -->
+  <div class="faq-group">
+    <div class="faq-group-title">STR Regulations by State</div>
+
+    <details>
+      <summary>How current is the regulations data in HostCalc?</summary>
+      <div class="faq-body">
+        <p>The regulations table reflects laws and policies as of early 2026. STR regulations change frequently at the city, county, and state level. Always verify requirements with your local planning department, city clerk, or a local real estate attorney before listing your property.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>My city has stricter rules than my state — which applies?</summary>
+      <div class="faq-body">
+        <p>Local rules (city or county ordinances) typically apply in addition to, or instead of, state rules. Most STR regulation happens at the city and county level. The HostCalc table summarizes state-level frameworks, but your city's ordinance is what you'll actually need to comply with.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What is an STR permit and do I need one?</summary>
+      <div class="faq-body">
+        <p>A short-term rental (STR) permit is an official license from your local government allowing you to legally rent your property for short stays. Most jurisdictions that regulate STRs require a permit before listing on Airbnb or VRBO. Operating without a required permit can result in fines, forced delisting, and legal liability. Check the regulations table for your state's general framework, then check your city's official website for the specific application process.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- ABOUT HOSTCALC -->
+  <div class="faq-group">
+    <div class="faq-group-title">About HostCalc</div>
+
+    <details>
+      <summary>Is HostCalc free to use?</summary>
+      <div class="faq-body">
+        <p>Yes, HostCalc is completely free. The site is supported by display advertising. You never need to create an account or provide payment information.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does HostCalc store my data?</summary>
+      <div class="faq-body">
+        <p>No. Every calculation on HostCalc runs entirely in your browser using JavaScript. None of the numbers you enter are transmitted to our servers, stored, or shared. When you close or refresh the page, the data is gone.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Is HostCalc affiliated with Airbnb or VRBO?</summary>
+      <div class="faq-body">
+        <p>No. HostCalc is an independent tool and is not affiliated with, endorsed by, or sponsored by Airbnb, VRBO, Expedia Group, or any other short-term rental platform. "Airbnb" is a registered trademark of Airbnb, Inc.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>I found an error in the regulations data. How do I report it?</summary>
+      <div class="faq-body">
+        <p>Please email us at <a href="mailto:hello@hostcalc.co">hello@hostcalc.co</a> with the state, the error, and a source link if you have one. We update the table as regulations change and appreciate the community help keeping it accurate.</p>
+      </div>
+    </details>
+  </div>
+
+</div><!-- /content-wrap -->
+
+<!-- BOTTOM AD -->
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Dashboard</a>
+      <a href="faq.html">FAQs</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+    <div class="footer-copy">
+      HostCalc © 2026 — Free Airbnb income calculator &amp; STR host dashboard.<br>
+      Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
