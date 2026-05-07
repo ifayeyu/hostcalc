@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Host Fees Explained 2026 — What Hosts Actually Pay</title>
+  <meta name="description" content="A complete breakdown of Airbnb host fees in 2026: the 3% service fee, cleaning fees, guest fees, and how the split-fee structure affects your net income.">
+  <link rel="canonical" href="https://hostcalc.co/airbnb-host-fees.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #1f4fff; --blue-hover: #1740e0; --blue-light: #eef2ff; --blue-border: #c7d7ff;
+      --text: #1e293b; --text2: #334155; --muted: #64748b;
+      --border: #e2e8f0; --bg: #eef1f5; --card: #ffffff;
+      --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 20px rgba(0,0,0,0.05);
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
+    .logo span { color: var(--blue); }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; padding: 7px 20px; border: 1.5px solid var(--blue); border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { background: var(--blue); color: #fff; }
+
+    .ad-zone { background: #f8fafc; border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; letter-spacing: 0.04em; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: #fff; border-bottom: 1px solid var(--border); }
+    .ad-center.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+
+    .page-hero { text-align: center; padding: 44px 20px 32px; max-width: 820px; margin: 0 auto; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+    .page-hero h1 em { color: var(--blue); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px 44px; margin-bottom: 16px; }
+    @media (max-width: 600px) { .article-card { padding: 24px 20px; } }
+
+    .article-card h2 { font-size: 18px; font-weight: 700; color: var(--text); margin: 32px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .article-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-card h3 { font-size: 15px; font-weight: 600; color: var(--text2); margin: 18px 0 8px; }
+    .article-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.8; }
+    .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
+    .article-card ul li { margin-bottom: 6px; }
+    .article-card a { color: var(--blue); text-decoration: none; }
+    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
+    .article-card a:hover { text-decoration: underline; }
+    strong { color: var(--text2); }
+
+    .fee-table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 13px; }
+    .fee-table th { background: var(--blue-light); color: var(--text2); font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--blue-border); }
+    .fee-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .fee-table tr:last-child td { border-bottom: none; }
+    .fee-table td:first-child { font-weight: 600; color: var(--text2); }
+
+    .highlight-box { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+    .cta-box { background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
+    .cta-box p { color: var(--text2); margin-bottom: 14px; font-size: 14px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 999px; text-decoration: none; transition: background 0.15s; }
+    .cta-btn:hover { background: var(--blue-hover); text-decoration: none; }
+
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Host<span>Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/" class="nav-btn">Income Calculator</a>
+    <a href="/faq.html" class="nav-btn">FAQs</a>
+  </nav>
+</header>
+
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>Airbnb <em>Host Fees</em> Explained 2026</h1>
+  <p>A full breakdown of what Airbnb charges hosts — and how fees affect your actual net income per booking.</p>
+</div>
+
+<div class="wrap">
+  <div class="article-card">
+
+    <h2>How Airbnb Charges Hosts</h2>
+    <p>Airbnb uses two different fee structures depending on how your listing is set up. Most hosts use the <strong>split-fee model</strong>, where both the host and the guest pay a fee. Some hosts — particularly those with strict cancellation policies or listings on other platforms — use the <strong>host-only fee model</strong>, where the host pays a larger fee but guests see no service charge.</p>
+
+    <table class="fee-table">
+      <thead>
+        <tr>
+          <th>Fee Structure</th>
+          <th>Host Pays</th>
+          <th>Guest Pays</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Split-fee (default)</td>
+          <td>~3% of booking subtotal</td>
+          <td>~14–16% of subtotal</td>
+          <td>Most listings</td>
+        </tr>
+        <tr>
+          <td>Host-only fee</td>
+          <td>14–16% of booking subtotal</td>
+          <td>Nothing</td>
+          <td>Software-connected listings, strict policy hosts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>The default is split-fee at ~3%.</strong> Unless you've opted into the host-only model, Airbnb is deducting approximately 3% from every payout you receive. HostCalc uses this rate by default in its calculations.
+    </div>
+
+    <h2>The 3% Host Service Fee — What It Covers</h2>
+    <p>Under the split-fee model, Airbnb charges hosts roughly 3% of the booking subtotal (nightly rate × nights, plus any extra guest fees you charge). This fee is deducted automatically before your payout is sent.</p>
+    <p>The 3% fee covers Airbnb's cost of processing your payment, providing host protection through their AirCover insurance program, and maintaining the platform infrastructure. It's one of the lowest platform take-rates in the short-term rental industry — by comparison, VRBO charges hosts 8% and property management software platforms typically charge 2–4% on top of payment processing.</p>
+    <p>The host service fee applies to the <strong>booking subtotal only</strong> — it does not include the security deposit (if collected) or the resolution center payouts. Cleaning fees you set are included in the subtotal, so Airbnb does take 3% of your cleaning fee as well, which is a detail many hosts miss.</p>
+
+    <h2>Cleaning Fees: Host-Set, Guest-Paid</h2>
+    <p>Cleaning fees are set by the host and paid by the guest at the time of booking. They show up as a separate line item on the guest's receipt and are included in the booking subtotal for the purpose of calculating Airbnb's service fees and taxes.</p>
+    <p>Setting the right cleaning fee is one of the most consequential pricing decisions an Airbnb host makes:</p>
+    <ul>
+      <li><strong>Too low:</strong> You subsidize cleaning costs out of your own margin, eroding profitability — especially on short stays.</li>
+      <li><strong>Too high:</strong> Guests comparison-shopping on Airbnb will be deterred, because Airbnb's search now shows total price (nightly rate + cleaning fee) by default.</li>
+      <li><strong>Tiered by stay length:</strong> Many experienced hosts set different cleaning fee strategies for short vs. long stays — or use minimum night requirements to reduce turnover costs.</li>
+    </ul>
+    <p>A reasonable cleaning fee for a one-bedroom apartment in most markets is $60–$120. For larger properties or vacation homes, $150–$300 is typical. These rates should reflect your actual cleaning cost, including labor and supplies, not just a round number.</p>
+
+    <h2>The Guest Service Fee: Why It Matters to Hosts</h2>
+    <p>Under the split-fee model, guests pay a separate service fee — typically 14–16% of the booking subtotal. This fee is charged to the guest and does not affect your host payout directly. However, it matters to you as a host for one important reason: <strong>it makes your listing more expensive than the nightly rate suggests.</strong></p>
+    <p>A listing priced at $150/night with a $75 cleaning fee and a 3-night stay will look like this to a guest:</p>
+    <ul>
+      <li>Nightly rate: $150 × 3 = $450</li>
+      <li>Cleaning fee: $75</li>
+      <li>Guest service fee (~15%): ~$79</li>
+      <li><strong>Total guest pays: ~$604</strong></li>
+      <li>Host receives: $450 + $75 − 3% host fee = ~$510</li>
+    </ul>
+    <p>The gap between what guests pay and what hosts receive is one of the most common sources of confusion in Airbnb pricing. Guests are price-sensitive to the total, while hosts see only the subtotal-minus-fee.</p>
+
+    <h2>Other Costs That Reduce Your Payout</h2>
+    <p>Beyond Airbnb's platform fee, several other costs reduce what you actually take home from each booking:</p>
+    <ul>
+      <li><strong>Occupancy taxes:</strong> In most jurisdictions, Airbnb collects and remits local occupancy taxes (hotel tax, transient occupancy tax, etc.) on your behalf. These appear on the guest receipt but are passed through — they don't affect your payout.</li>
+      <li><strong>Currency conversion fees:</strong> If you're paid in a currency different from your bank account's currency, Airbnb applies a conversion rate that may differ from the market rate.</li>
+      <li><strong>Payment processing:</strong> Included in the 3% host fee — no additional charge.</li>
+      <li><strong>Damage claims:</strong> If you file a damage claim and Airbnb approves it, the funds are typically deducted from future guest payouts rather than coming from your pocket — but the process takes time and isn't guaranteed.</li>
+    </ul>
+
+    <h2>Host-Only Fee: When It Makes Sense</h2>
+    <p>The host-only fee model (where you pay 14–16% instead of ~3%) is required in some circumstances — notably, listings managed through third-party property management software connected to Airbnb via API, and listings with non-refundable cancellation policies. Some hosts opt into it voluntarily because it improves conversion: guests see a lower total price (no guest service fee), which can increase booking rates enough to offset the higher host fee.</p>
+    <p>Whether the host-only model is profitable for you depends entirely on how much your booking rate increases and what your margin looks like at a higher fee rate. For most individual hosts with typical occupancy, the split-fee model is the better default choice.</p>
+
+    <div class="cta-box">
+      <p>Use HostCalc to model exactly how Airbnb's fees affect your real net income at any nightly rate and occupancy level.</p>
+      <a href="/" class="cta-btn">Calculate Your Net Income →</a>
+    </div>
+
+    <h2>How to Minimize Fee Impact</h2>
+    <p>You can't reduce Airbnb's host service fee below the platform minimum, but you can structure your listing to minimize the overall fee impact on your margins:</p>
+    <ul>
+      <li><strong>Set minimum night requirements:</strong> Longer stays reduce per-stay cleaning costs and turnover labor, improving your net margin even at the same nightly rate.</li>
+      <li><strong>Price for the total, not the nightly rate:</strong> Since Airbnb now shows total price by default, model your pricing around the total guest cost, not just your nightly rate.</li>
+      <li><strong>Use weekly and monthly discounts strategically:</strong> Airbnb's discount tools let you offer lower rates for longer stays, reducing vacancy while maintaining healthy margins.</li>
+      <li><strong>Diversify across platforms:</strong> Listing on VRBO and Booking.com alongside Airbnb gives you pricing flexibility and reduces dependence on a single platform's fee structure.</li>
+    </ul>
+
+    <h2>Related Resources</h2>
+    <p>For more on Airbnb STR profitability, see our guide to <a href="/airbnb-occupancy-rate.html">what occupancy rate you actually need to profit</a> or visit our <a href="/faq.html">frequently asked questions</a> about how HostCalc calculates net income.</p>
+
+  </div>
+</div>
+
+<div class="ad-center bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Income Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/airbnb-host-fees.html">Airbnb Host Fees</a>
+    <a href="/airbnb-occupancy-rate.html">Occupancy Rate Guide</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">HostCalc &copy; 2026 &mdash; Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.</p>
+</footer>
+
+</body>
+</html>

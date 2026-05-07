@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Good Airbnb Occupancy Rate? 2026 Benchmarks by Market</title>
+  <meta name="description" content="Learn what occupancy rate you need to profit on Airbnb in 2026. Benchmarks by market type, how to calculate your break-even, and tips to improve your occupancy.">
+  <link rel="canonical" href="https://hostcalc.co/airbnb-occupancy-rate.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #1f4fff; --blue-hover: #1740e0; --blue-light: #eef2ff; --blue-border: #c7d7ff;
+      --text: #1e293b; --text2: #334155; --muted: #64748b;
+      --border: #e2e8f0; --bg: #eef1f5; --card: #ffffff;
+      --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 20px rgba(0,0,0,0.05);
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
+    .logo span { color: var(--blue); }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; padding: 7px 20px; border: 1.5px solid var(--blue); border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { background: var(--blue); color: #fff; }
+
+    .ad-zone { background: #f8fafc; border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; letter-spacing: 0.04em; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: #fff; border-bottom: 1px solid var(--border); }
+    .ad-center.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+
+    .page-hero { text-align: center; padding: 44px 20px 32px; max-width: 820px; margin: 0 auto; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+    .page-hero h1 em { color: var(--blue); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px 44px; margin-bottom: 16px; }
+    @media (max-width: 600px) { .article-card { padding: 24px 20px; } }
+
+    .article-card h2 { font-size: 18px; font-weight: 700; color: var(--text); margin: 32px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .article-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-card h3 { font-size: 15px; font-weight: 600; color: var(--text2); margin: 18px 0 8px; }
+    .article-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.8; }
+    .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
+    .article-card ul li { margin-bottom: 6px; }
+    .article-card a { color: var(--blue); text-decoration: none; }
+    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
+    .article-card a:hover { text-decoration: underline; }
+    strong { color: var(--text2); }
+
+    .occ-table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 13px; }
+    .occ-table th { background: var(--blue-light); color: var(--text2); font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--blue-border); }
+    .occ-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .occ-table tr:last-child td { border-bottom: none; }
+    .occ-table td:first-child { font-weight: 600; color: var(--text2); }
+
+    .highlight-box { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+    .cta-box { background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
+    .cta-box p { color: var(--text2); margin-bottom: 14px; font-size: 14px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 999px; text-decoration: none; transition: background 0.15s; }
+    .cta-btn:hover { background: var(--blue-hover); text-decoration: none; }
+
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Host<span>Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/" class="nav-btn">Income Calculator</a>
+    <a href="/faq.html" class="nav-btn">FAQs</a>
+  </nav>
+</header>
+
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>What Is a Good <em>Airbnb Occupancy Rate</em>?</h1>
+  <p>2026 benchmarks by market type, how to calculate your break-even occupancy, and what actually moves the needle.</p>
+</div>
+
+<div class="wrap">
+  <div class="article-card">
+
+    <h2>The Average Airbnb Occupancy Rate</h2>
+    <p>The average Airbnb occupancy rate across all listing types and markets sits between <strong>50–65%</strong> — meaning a typical listing is booked roughly 15–20 nights per month. But this average conceals enormous variation. High-demand urban listings in cities like New York, Los Angeles, or Miami can sustain 75–85% occupancy. Seasonal vacation markets might peak at 90% in summer and drop to 20% in winter. Rural or niche listings may operate profitably at 40%.</p>
+    <p>The number that matters isn't the market average — it's <em>your</em> break-even occupancy: the minimum booking rate at which your STR covers all costs and starts generating profit.</p>
+
+    <div class="highlight-box">
+      <strong>Key insight:</strong> Most hosts focus on maximizing occupancy. The smarter goal is maximizing <em>net income</em> — which sometimes means raising your nightly rate and accepting lower occupancy, rather than discounting to fill every night.
+    </div>
+
+    <h2>Occupancy Rate Benchmarks by Market Type</h2>
+    <table class="occ-table">
+      <thead>
+        <tr>
+          <th>Market Type</th>
+          <th>Typical Occupancy</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Major urban / tourist city</td>
+          <td>65–80%</td>
+          <td>High demand year-round; competition is fierce</td>
+        </tr>
+        <tr>
+          <td>Beach / lake vacation market</td>
+          <td>70–90% peak, 20–35% off-season</td>
+          <td>Annual average often 45–60% due to seasonality</td>
+        </tr>
+        <tr>
+          <td>Mountain / ski destination</td>
+          <td>60–85% in season, 15–30% off-season</td>
+          <td>Two peak seasons if hiking traffic in summer</td>
+        </tr>
+        <tr>
+          <td>Suburban / secondary market</td>
+          <td>40–60%</td>
+          <td>Lower demand; longer minimum stays help margins</td>
+        </tr>
+        <tr>
+          <td>Rural / niche retreat</td>
+          <td>35–55%</td>
+          <td>Unique properties can command premium rates</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>How to Calculate Your Break-Even Occupancy</h2>
+    <p>Your break-even occupancy is the percentage of nights that must be booked for your STR to cover all costs — not generate profit, just not lose money. Here's how to calculate it:</p>
+    <ul>
+      <li><strong>Step 1:</strong> Add up your fixed monthly costs — mortgage or rent, insurance, utilities, property management fees (if any), and your annual maintenance reserve divided by 12.</li>
+      <li><strong>Step 2:</strong> Calculate your net revenue per booked night — nightly rate minus Airbnb's ~3% host fee, minus per-stay variable costs (cleaning, supplies) amortized per night.</li>
+      <li><strong>Step 3:</strong> Break-even nights per month = Fixed monthly costs ÷ Net revenue per night.</li>
+      <li><strong>Step 4:</strong> Break-even occupancy % = Break-even nights ÷ 30.</li>
+    </ul>
+    <p>For example: if your fixed monthly costs are $2,400 and you net $120 per booked night after fees and cleaning, you need 20 booked nights per month to break even — a 67% occupancy rate. That's a demanding target in a competitive market.</p>
+
+    <div class="cta-box">
+      <p>HostCalc calculates your break-even occupancy automatically based on your costs and nightly rate. Run your numbers free.</p>
+      <a href="/" class="cta-btn">Calculate Your Break-Even →</a>
+    </div>
+
+    <h2>Why High Occupancy Isn't Always the Goal</h2>
+    <p>Many new Airbnb hosts make the mistake of equating high occupancy with success. In reality, consistently high occupancy — especially if achieved through discounting — can be a sign that your nightly rate is too low. If you're booked 90% of the time with a 2-day minimum, you may be leaving significant revenue on the table.</p>
+    <p>A useful benchmark: if you're consistently booked more than 80% of the time, your nightly rate is likely underpriced. Raising it by 10–20% and accepting 65–70% occupancy often yields higher net income — with less wear on the property and fewer turnover costs.</p>
+    <p>The most profitable Airbnb hosts aren't necessarily the most booked. They're the ones who have found the optimal price point where revenue per available night (RevPAN) is maximized — not just occupancy.</p>
+
+    <h2>Factors That Drive Airbnb Occupancy</h2>
+    <p>Occupancy is influenced by a combination of factors, some within your control and some not:</p>
+    <ul>
+      <li><strong>Nightly rate:</strong> The most direct lever. Lower prices fill more nights; higher prices reduce occupancy but may increase revenue per night.</li>
+      <li><strong>Listing quality:</strong> Professional photography, detailed descriptions, and a complete amenity list all improve conversion from search to booking.</li>
+      <li><strong>Review count and rating:</strong> Airbnb's algorithm heavily weights reviews. New listings without reviews get an initial boost from Airbnb; after that, ratings and response rate drive search ranking.</li>
+      <li><strong>Minimum night requirements:</strong> Higher minimums reduce occupancy rate but lower turnover costs and reduce the chance of problematic short stays.</li>
+      <li><strong>Cancellation policy:</strong> Strict policies reduce last-minute cancellations but can deter guests who are comparison-shopping.</li>
+      <li><strong>Market seasonality:</strong> Understanding your market's demand calendar and adjusting pricing accordingly is more valuable than any single optimization.</li>
+      <li><strong>Response time:</strong> Hosts with faster response times rank higher in Airbnb's search results and convert more inquiries into bookings.</li>
+    </ul>
+
+    <h2>Seasonal Pricing to Maximize Annual Income</h2>
+    <p>The hosts who generate the most income from STRs are rarely those who set a flat nightly rate and leave it. Dynamic pricing — adjusting your rate based on local demand, events, seasonality, and competition — can meaningfully increase annual revenue without changing occupancy at all.</p>
+    <p>The principle is simple: charge more when demand is high (holidays, local events, peak season) and accept lower rates — or more flexible minimums — during slow periods to maintain cash flow. Tools like PriceLabs, Wheelhouse, and Beyond Pricing automate this process by connecting to market data and adjusting your rates daily.</p>
+    <p>Even without software, reviewing your market's pricing on peak weekends versus slow midweeks and adjusting manually each month can improve your annual RevPAN by 15–25% compared to static pricing.</p>
+
+    <h2>Related Resources</h2>
+    <p>See our detailed guide to <a href="/airbnb-host-fees.html">Airbnb host fees</a> to understand exactly what Airbnb deducts from every booking — or visit the <a href="/faq.html">HostCalc FAQ</a> for answers to common questions about how net income is calculated.</p>
+
+  </div>
+</div>
+
+<div class="ad-center bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Income Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/airbnb-host-fees.html">Airbnb Host Fees</a>
+    <a href="/airbnb-occupancy-rate.html">Occupancy Rate Guide</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">HostCalc &copy; 2026 &mdash; Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.</p>
+</footer>
+
+</body>
+</html>
