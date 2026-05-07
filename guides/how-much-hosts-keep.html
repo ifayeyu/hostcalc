@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much Do Airbnb Hosts Actually Keep After Fees? (2026)</title>
+  <meta name="description" content="The real math on Airbnb host income — what Airbnb takes, what cleaning costs, what taxes eat, and what's left at the end of the month.">
+  <link rel="canonical" href="https://hostcalc.co/guides/how-much-hosts-keep.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #1f4fff; --blue-hover: #1740e0; --blue-light: #eef2ff; --blue-border: #c7d7ff;
+      --text: #1e293b; --text2: #334155; --muted: #64748b;
+      --border: #e2e8f0; --bg: #eef1f5; --card: #ffffff;
+      --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 20px rgba(0,0,0,0.05);
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
+    .logo span { color: var(--blue); }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; padding: 7px 20px; border: 1.5px solid var(--blue); border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { background: var(--blue); color: #fff; }
+    .ad-zone { background: #f8fafc; border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: #fff; border-bottom: 1px solid var(--border); }
+    .ad-center.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+    .page-hero { text-align: center; padding: 44px 20px 32px; max-width: 820px; margin: 0 auto; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+    .page-hero h1 em { color: var(--blue); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+    .meta { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px 44px; margin-bottom: 16px; }
+    @media (max-width: 600px) { .article-card { padding: 24px 20px; } }
+    .article-card h2 { font-size: 18px; font-weight: 700; color: var(--text); margin: 32px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .article-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.85; }
+    .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
+    .article-card li { margin-bottom: 6px; }
+    .article-card a { color: var(--blue); text-decoration: none; }
+    .article-card a:hover { text-decoration: underline; }
+    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
+    strong { color: var(--text2); }
+    .math-table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 13px; }
+    .math-table th { background: var(--blue-light); color: var(--text2); font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--blue-border); }
+    .math-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .math-table tr:last-child td { border-bottom: 2px solid var(--blue-border); font-weight: 700; color: var(--text2); }
+    .math-table td:first-child { color: var(--text2); }
+    .math-table td:last-child { text-align: right; }
+    .math-table th:last-child { text-align: right; }
+    .highlight-box { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); line-height: 1.7; }
+    .cta-box { background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
+    .cta-box p { color: var(--text2); margin-bottom: 14px; font-size: 14px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 999px; text-decoration: none; transition: background 0.15s; }
+    .cta-btn:hover { background: var(--blue-hover); text-decoration: none; }
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Host<span>Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/" class="nav-btn">Income Calculator</a>
+    <a href="/guides/" class="nav-btn">Guides</a>
+  </nav>
+</header>
+
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>How Much Do <em>Airbnb Hosts</em> Actually Keep?</h1>
+  <p>The full fee picture — what Airbnb takes, what operating costs eat, and what's really left after a month of hosting.</p>
+  <p class="meta">By the HostCalc team &nbsp;·&nbsp; Last updated May 2026 &nbsp;·&nbsp; 9 min read</p>
+</div>
+
+<div class="wrap">
+  <div class="article-card">
+
+    <h2>The Gap Between Gross and Net</h2>
+    <p>New hosts almost always focus on the gross revenue number — $150/night at 60% occupancy is $2,700/month! — and work backward from there to decide if Airbnb is worth it.</p>
+    <p>The problem is that $2,700 is not what lands in your bank account. By the time you subtract Airbnb's cut, cleaning costs, supplies, utilities, and a maintenance reserve, the real number is typically 50–65% of gross. Sometimes less.</p>
+    <p>This guide walks through every deduction so you know what to expect.</p>
+
+    <h2>Step 1: Airbnb's Host Fee (3%)</h2>
+    <p>Under Airbnb's default split-fee model, hosts pay about 3% of the booking subtotal. That's the nightly rate times number of nights, plus any cleaning fee you charge.</p>
+    <p>On a $150/night, 3-night booking with a $75 cleaning fee, the subtotal is $525. Airbnb takes $15.75 (3%). You receive $509.25 from that booking.</p>
+    <p>It sounds small — and individually it is. But across a full month of bookings, it adds up to $60–$90 on a typical one-bedroom listing.</p>
+
+    <h2>Step 2: Cleaning Costs</h2>
+    <p>This is where hosts bleed money without realizing it. Every guest turnover costs money — either your time or a cleaner's rate.</p>
+    <ul>
+      <li>Professional cleaner for a 1-bedroom: <strong>$80–$150 per turnover</strong></li>
+      <li>At 60% occupancy with 2-night average stays: roughly <strong>9 turnovers/month</strong></li>
+      <li>Monthly cleaning cost at $100/clean: <strong>$900/month</strong></li>
+    </ul>
+    <p>Many hosts charge guests a cleaning fee to offset this. A $75 cleaning fee on a 2-night stay covers most of the cost — but on a 1-night stay, you're taking in $75 and spending $100 or more to clean. Short stays are often net-negative on cleaning alone.</p>
+    <p>This is why minimum night requirements matter. A 2-night minimum cuts your turnovers roughly in half compared to no minimum.</p>
+
+    <h2>Step 3: Supplies and Consumables</h2>
+    <p>Every guest uses something: toilet paper, hand soap, dish soap, coffee pods, trash bags, paper towels. Add in laundry costs (washing linens after every turnover) and it runs $30–$80 a month depending on your turnover frequency and what you provide.</p>
+    <p>It's a small line item but it's a guaranteed one. Budget $50/month for a one-bedroom and you'll be close.</p>
+
+    <h2>Step 4: Utilities</h2>
+    <p>Unlike long-term rentals where the tenant pays utilities, Airbnb hosts almost always cover electricity, water, gas, WiFi, and streaming. Guests use these freely — they have no incentive not to.</p>
+    <p>Utility costs for a one-bedroom apartment typically run $150–$250/month. Some hosts in hot or cold climates pay more because guests crank the A/C or heat and leave it running when they go out.</p>
+
+    <h2>Step 5: Maintenance Reserve</h2>
+    <p>Things break. A guest breaks a wine glass (common). The shower drain clogs (very common). The sofa gets a stain. The TV remote stops working. The microwave dies.</p>
+    <p>A standard rule in real estate is to reserve 1% of property value per year for maintenance. For an Airbnb, 1.5–2% is more realistic because STR properties see higher wear. On a $300,000 property, that's $375–$500/month set aside.</p>
+    <p>Most hosts ignore this until something expensive breaks. Don't. Set $150–$300/month aside as a reserve — you'll need it eventually.</p>
+
+    <h2>Step 6: Insurance</h2>
+    <p>Airbnb's AirCover program provides some host protection, but it has exclusions, claim limits, and a review process that can take weeks. Most experienced hosts carry a dedicated short-term rental insurance policy in addition to or instead of relying on AirCover.</p>
+    <p>STR-specific policies (from companies like Proper Insurance or Steadily) typically run $1,200–$3,000/year depending on property value and location. That's $100–$250/month.</p>
+
+    <h2>The Full Math: What You Actually Keep</h2>
+    <p>Let's run the numbers for a one-bedroom in a mid-size U.S. city. Nightly rate: $130. Occupancy: 62% (about 19 nights/month). Average stay: 2.5 nights.</p>
+
+    <table class="math-table">
+      <thead><tr><th>Line Item</th><th>Monthly Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Gross booking revenue (19 nights × $130)</td><td>$2,470</td></tr>
+        <tr><td>Airbnb host fee (3%)</td><td>−$74</td></tr>
+        <tr><td>Cleaning costs (~8 turnovers × $100)</td><td>−$800</td></tr>
+        <tr><td>Supplies and consumables</td><td>−$50</td></tr>
+        <tr><td>Utilities</td><td>−$180</td></tr>
+        <tr><td>Maintenance reserve</td><td>−$200</td></tr>
+        <tr><td>Insurance (STR policy)</td><td>−$150</td></tr>
+        <tr><td><strong>Net operating income</strong></td><td><strong>$1,016</strong></td></tr>
+      </tbody>
+    </table>
+
+    <p>That's 41% of gross revenue — before property costs (mortgage or rent). If this host has a $1,500/month mortgage, they're net-negative. At $800/month mortgage, they're netting $216/month — not much for the effort involved.</p>
+
+    <div class="highlight-box">
+      <strong>The real margin:</strong> In a typical U.S. market, most active Airbnb hosts keep 40–60% of their gross booking revenue after operating costs. After property costs (mortgage), the actual profit margin is often much thinner than the gross number suggests.
+    </div>
+
+    <h2>When the Numbers Work</h2>
+    <p>The math works best when one or more of these is true:</p>
+    <ul>
+      <li><strong>Your nightly rate is high relative to costs</strong> — vacation markets with $300+/night rates absorb the same fixed costs much more easily</li>
+      <li><strong>You own the property outright</strong> — no mortgage payment changes everything</li>
+      <li><strong>Your cleaning costs are low</strong> — you clean yourself, or you have a low-cost cleaner, or you enforce longer minimum stays to reduce turnovers</li>
+      <li><strong>Occupancy is consistently above 65%</strong> — the fixed costs are spread across more revenue nights</li>
+    </ul>
+
+    <h2>What You Can Control</h2>
+    <p>You can't change Airbnb's fee. You can't make utilities cheaper. But you can control:</p>
+    <ul>
+      <li><strong>Minimum night requirement</strong> — raising from 1 to 2 nights cuts turnovers and cleaning costs roughly in half</li>
+      <li><strong>Nightly rate</strong> — even a $10–$15 increase compresses your cost ratio significantly at the same occupancy</li>
+      <li><strong>Cleaning fee structure</strong> — charge a cleaning fee that actually covers your cleaning cost, not a round number you made up</li>
+      <li><strong>Supplier costs</strong> — bulk buying toilet paper, soap, and consumables from Costco cuts supply costs by 30–40%</li>
+    </ul>
+
+    <div class="cta-box">
+      <p>Plug your actual nightly rate, occupancy, and costs into HostCalc to see exactly what you'd net each month.</p>
+      <a href="/" class="cta-btn">Calculate My Net Income →</a>
+    </div>
+
+    <h2>Related Guides</h2>
+    <p>Understanding your fees is step one. Step two is knowing <a href="/airbnb-occupancy-rate.html">what occupancy rate you need to actually profit</a>, and step three is avoiding the <a href="/guides/airbnb-cash-flow-mistakes.html">cash flow mistakes that catch most new hosts off guard</a>.</p>
+
+  </div>
+</div>
+
+<div class="ad-center bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Income Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/guides/">Guides</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/airbnb-host-fees.html">Airbnb Host Fees</a>
+    <a href="/airbnb-occupancy-rate.html">Occupancy Rate Guide</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">HostCalc &copy; 2026 &mdash; Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice.</p>
+</footer>
+
+</body>
+</html>
