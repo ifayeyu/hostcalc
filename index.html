@@ -328,12 +328,11 @@
     .trust-item p { font-size: 12px; color: var(--muted); line-height: 1.55; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--card); border-top: 1px solid var(--border);
-      padding: 28px 40px; text-align: center;
-    }
-    .footer-inner { max-width: 1120px; margin: 0 auto; }
-    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
     .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.15s; }
     .footer-links a:hover { color: var(--blue); }
     .footer-copy { font-size: 12px; color: #94a3b8; line-height: 1.7; }
@@ -793,19 +792,16 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="/">Dashboard</a>
-      <a href="/about.html">About</a>
-      <a href="faq.html">FAQs</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
-    </div>
-    <div class="footer-copy">
-      HostCalc © 2026 — Free Airbnb income calculator &amp; STR host dashboard.<br>
-      Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.
-    </div>
+  <div class="footer-links">
+    <a href="/">Income Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/shared-hosting-cost.html">Hosting Costs</a>
+    <a href="/cheapest-web-hosting.html">Cheapest Hosting</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
   </div>
+  <p class="footer-copy">HostCalc &copy; 2026 &mdash; Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.</p>
 </footer>
 
 <script>

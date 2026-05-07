@@ -64,6 +64,7 @@
     .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
     .article-card ul li { margin-bottom: 6px; }
     .article-card a { color: var(--blue); text-decoration: none; }
+    .article-card .cta-btn, .article-card .cta-btn:hover { color: #fff; text-decoration: none; }
     .article-card a:hover { text-decoration: underline; }
     strong { color: var(--text); }
 
@@ -90,11 +91,14 @@
 
     .cta-box { background: var(--blue-light); border: 1px solid #bfdbfe; border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
     .cta-box p { color: var(--text); margin-bottom: 14px; font-size: 14px; }
-    .cta-btn { display: inline-block; background: var(--blue); color: #fff; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 50px; text-decoration: none; transition: opacity 0.15s; }
+    .cta-btn { display: inline-block; background: var(--blue); color: #fff !important; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 50px; text-decoration: none; transition: opacity 0.15s; }
     .cta-btn:hover { opacity: 0.88; text-decoration: none; }
 
-    footer { background: var(--card); border-top: 1px solid var(--border); padding: 28px 40px; text-align: center; }
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
     .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
     .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
     .footer-links a:hover { text-decoration: underline; }
     .footer-copy { font-size: 12px; color: var(--muted); }
@@ -246,14 +250,15 @@
 
 <footer>
   <div class="footer-links">
-    <a href="/">STR Calculator</a>
+    <a href="/">Income Calculator</a>
     <a href="/about.html">About</a>
-    <a href="/shared-hosting-cost.html">Shared Hosting Cost</a>
-    <a href="/faq.html">FAQ</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/shared-hosting-cost.html">Hosting Costs</a>
+    <a href="/cheapest-web-hosting.html">Cheapest Hosting</a>
     <a href="/privacy.html">Privacy Policy</a>
     <a href="/terms.html">Terms of Use</a>
   </div>
-  <p class="footer-copy">HostCalc © 2026 — Free Airbnb income calculator & STR host dashboard. Estimates only; verify with official sources.</p>
+  <p class="footer-copy">HostCalc &copy; 2026 &mdash; Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.</p>
 </footer>
 
 </body>
