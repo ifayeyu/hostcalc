@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About HostCalc — Free Airbnb Income Calculator</title>
+  <meta name="description" content="HostCalc is a free Airbnb income and STR profitability calculator built to help short-term rental hosts understand their real net income after all fees, costs, and taxes.">
+  <link rel="canonical" href="https://hostcalc.co/about.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6095140459786991" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #1f4fff; --blue-hover: #1740e0; --blue-light: #eef2ff; --blue-border: #c7d7ff;
+      --text: #1e293b; --text2: #334155; --muted: #64748b;
+      --border: #e2e8f0; --bg: #eef1f5; --card: #ffffff;
+      --radius: 12px; --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 4px 20px rgba(0,0,0,0.05);
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+
+    header { background: #fff; border-bottom: 1px solid var(--border); padding: 0 32px; height: 58px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 22px; font-weight: 800; text-decoration: none; letter-spacing: -0.5px; color: var(--text); }
+    .logo span { color: var(--blue); }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; padding: 7px 20px; border: 1.5px solid var(--blue); border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { background: var(--blue); color: #fff; }
+
+    .ad-zone { background: #f8fafc; border: 1.5px dashed var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; border-radius: 8px; letter-spacing: 0.04em; }
+    .ad-leader { width: 100%; max-width: 728px; height: 90px; }
+    .ad-center { display: flex; justify-content: center; padding: 12px 24px; background: #fff; border-bottom: 1px solid var(--border); }
+    .ad-center.bottom { border-bottom: none; border-top: 1px solid var(--border); }
+
+    .page-hero { text-align: center; padding: 44px 20px 32px; max-width: 820px; margin: 0 auto; }
+    .page-hero h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px; }
+    .page-hero h1 em { color: var(--blue); font-style: normal; }
+    .page-hero p { font-size: 15px; color: var(--muted); max-width: 580px; margin: 0 auto; }
+
+    .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+
+    .article-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 40px 44px; margin-bottom: 16px; }
+    @media (max-width: 600px) { .article-card { padding: 24px 20px; } }
+
+    .article-card h2 { font-size: 18px; font-weight: 700; color: var(--text); margin: 32px 0 10px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .article-card h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .article-card h3 { font-size: 15px; font-weight: 600; color: var(--text2); margin: 18px 0 8px; }
+    .article-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.8; }
+    .article-card ul { font-size: 14px; color: var(--muted); margin: 8px 0 14px 20px; line-height: 1.85; }
+    .article-card ul li { margin-bottom: 6px; }
+    .article-card a { color: var(--blue); text-decoration: none; }
+    .article-card a:hover { text-decoration: underline; }
+    strong { color: var(--text2); }
+
+    .highlight-box { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+    .cta-box { background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: var(--radius); padding: 24px 28px; text-align: center; margin: 24px 0; }
+    .cta-box p { color: var(--text2); margin-bottom: 14px; font-size: 14px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: #fff; font-weight: 600; font-size: 14px; padding: 10px 24px; border-radius: 999px; text-decoration: none; transition: background 0.15s; }
+    .cta-btn:hover { background: var(--blue-hover); text-decoration: none; }
+
+    footer { background: #fff; border-top: 1px solid var(--border); padding: 28px 32px; text-align: center; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; }
+    .footer-links a:hover { text-decoration: underline; }
+    .footer-copy { font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">Host<span>Calc</span></a>
+  <nav style="display:flex;gap:8px;">
+    <a href="/" class="nav-btn">Income Calculator</a>
+    <a href="/faq.html" class="nav-btn">FAQs</a>
+  </nav>
+</header>
+
+<div class="ad-center">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<div class="page-hero">
+  <h1>About <em>HostCalc</em></h1>
+  <p>A free Airbnb income calculator built to give STR hosts a realistic picture of their net earnings — not just gross revenue.</p>
+</div>
+
+<div class="wrap">
+  <div class="article-card">
+
+    <h2>What Is HostCalc?</h2>
+    <p>HostCalc is a free, browser-based Airbnb income calculator and short-term rental (STR) profitability dashboard. It was built to answer the question that every prospective Airbnb host asks — and that few tools answer honestly: <em>how much will I actually make?</em></p>
+    <p>Most Airbnb income estimates start and stop at nightly rate × occupancy. That number looks great on paper. HostCalc goes further, helping you model all the costs that reduce it: Airbnb's host service fee, cleaning costs, supplies, property costs (mortgage or rent), utilities, maintenance reserves, insurance, local taxes, and management fees if you use a property manager. The result is your projected net income — the number that actually matters.</p>
+
+    <div class="highlight-box">
+      <strong>No account, no data stored:</strong> HostCalc runs entirely in your browser. Your property details, nightly rates, and financial inputs are never sent to a server. Everything is calculated locally and is gone when you close the tab.
+    </div>
+
+    <h2>Who HostCalc Is Built For</h2>
+    <p>HostCalc is designed for three kinds of users:</p>
+    <ul>
+      <li><strong>Prospective hosts</strong> evaluating whether to list a property on Airbnb — use HostCalc to model different nightly rates, occupancy scenarios, and cost structures before committing</li>
+      <li><strong>Active Airbnb hosts</strong> who want to understand exactly where their revenue is going and identify which costs are eating the most into their margins</li>
+      <li><strong>Real estate investors</strong> analyzing short-term rental potential for a property they're considering purchasing — model ROI scenarios across different markets and price points</li>
+    </ul>
+    <p>HostCalc works for any property type — private rooms, entire apartments, vacation homes, and multi-property portfolios. The dashboard lets you model your numbers quickly and export a summary for your records.</p>
+
+    <h2>Why Gross Revenue Is Misleading</h2>
+    <p>The short-term rental industry has a persistent problem: most income projections wildly overstate what hosts actually take home. "You could earn $4,000 a month!" sounds great until you subtract the platform fees, cleaning costs after every turnover, supplies, utilities, insurance, and the 2 AM toilet repair that wasn't in anyone's spreadsheet.</p>
+    <p>HostCalc was built specifically to counter this. By modeling all the real costs — not just the optimistic headline revenue — hosts can make informed decisions about pricing, listing strategy, and whether STR hosting is actually financially worthwhile for their specific situation and property.</p>
+    <p>The typical Airbnb host in a competitive urban market takes home 50–65% of their gross booking revenue after platform fees and operating costs. In less competitive or seasonal markets, this number can be lower. Understanding your real margin before you start — not after you've been hosting for six months — is the entire point of HostCalc.</p>
+
+    <h2>How HostCalc Calculates Income</h2>
+    <p>HostCalc uses the same methodology professional STR analysts and real estate investors use to evaluate short-term rental properties:</p>
+    <ul>
+      <li><strong>Gross Revenue</strong> = Nightly Rate × Nights Occupied (based on your projected occupancy rate)</li>
+      <li><strong>Platform Fee</strong> = Airbnb's host service fee (3% for most listings using the split-fee structure)</li>
+      <li><strong>Net Revenue</strong> = Gross Revenue − Platform Fee</li>
+      <li><strong>Operating Expenses</strong> = Cleaning + Supplies + Utilities + Maintenance Reserve + Insurance + Management Fee</li>
+      <li><strong>Net Operating Income (NOI)</strong> = Net Revenue − Operating Expenses</li>
+      <li><strong>Net Income</strong> = NOI − Property Costs (mortgage or rent payment)</li>
+    </ul>
+    <p>Tax treatment is complex and jurisdiction-specific, so HostCalc presents pre-tax net income. Always consult a tax professional to understand how your STR income will be taxed in your specific situation.</p>
+
+    <h2>Our Educational Resources</h2>
+    <p>HostCalc publishes guides to help hosts understand the financial and regulatory aspects of short-term rental hosting:</p>
+    <ul>
+      <li><a href="/shared-hosting-cost.html">Understanding shared hosting costs</a></li>
+      <li><a href="/cheapest-web-hosting.html">Cheapest web hosting comparison</a></li>
+      <li><a href="/faq.html">Frequently asked questions about HostCalc</a></li>
+    </ul>
+
+    <div class="cta-box">
+      <p>Ready to see what you'd actually earn? Run your numbers in under two minutes — free, no account needed.</p>
+      <a href="/" class="cta-btn">Calculate Your Airbnb Income →</a>
+    </div>
+
+    <h2>Important Disclaimers</h2>
+    <p>HostCalc's projections are estimates based on the inputs you provide. Actual income will vary based on market conditions, listing quality, pricing strategy, local regulations, and many other factors outside our control. HostCalc does not provide financial, tax, legal, or investment advice. Always consult qualified professionals before making real estate or investment decisions.</p>
+    <p>Airbnb's fee structure, platform policies, and local regulatory requirements change over time. While we work to keep HostCalc's calculations current, always verify current fee rates directly with Airbnb before making financial decisions based on these projections.</p>
+
+    <h2>Contact</h2>
+    <p>For questions, feedback, or partnership inquiries, reach us at <a href="mailto:hello@hostcalc.co">hello@hostcalc.co</a>.</p>
+
+  </div>
+</div>
+
+<div class="ad-center bottom">
+  <div class="ad-zone ad-leader">Advertisement</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Income Calculator</a>
+    <a href="/about.html">About</a>
+    <a href="/faq.html">FAQs</a>
+    <a href="/shared-hosting-cost.html">Hosting Costs</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+  </div>
+  <p class="footer-copy">HostCalc © 2026 — Free Airbnb income calculator &amp; STR host dashboard. Not financial, tax, or legal advice. Consult a qualified professional for your specific situation.</p>
+</footer>
+
+</body>
+</html>
