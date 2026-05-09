@@ -47,14 +47,10 @@
     .logo { font-size: 22px; font-weight: 700; text-decoration: none; letter-spacing: -0.5px; }
     .logo-host { color: var(--text); }
     .logo-calc { color: var(--blue); }
-    .header-nav a {
-      font-size: 14px; font-weight: 500;
-      color: var(--blue); text-decoration: none;
-      padding: 7px 18px; border-radius: 50px;
-      border: 1.5px solid var(--blue);
-      transition: all 0.15s;
-    }
-    .header-nav a:hover { background: var(--blue); color: #fff; }
+    .header-nav { display: flex; gap: 8px; }
+    .nav-btn { font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; padding: 7px 16px; border: 1.5px solid transparent; border-radius: 999px; transition: all 0.15s; }
+    .nav-btn:hover { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .nav-btn.active { border-color: var(--blue); background: transparent; color: var(--blue); }
 
     /* AD */
 

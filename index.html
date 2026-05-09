@@ -85,14 +85,15 @@
 
     .header-nav { display: flex; gap: 4px; align-items: center; }
     .header-nav a {
-      font-size: 14px; font-weight: 500;
+      font-size: 13px; font-weight: 600;
       color: var(--blue); text-decoration: none;
-      padding: 7px 18px; border-radius: 50px;
+      padding: 7px 16px; border-radius: 999px;
       border: 1.5px solid transparent;
       transition: all 0.15s;
     }
-    .header-nav a:hover { border-color: var(--blue); }
-    .header-nav a.active { border-color: var(--blue); background: var(--card); }
+    .header-nav a:hover { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .header-nav a.active { border-color: var(--blue); background: transparent; color: var(--blue); }
+    .header-nav .nav-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
     @media (max-width: 680px) { .header-nav { display: none; } }
 
     /* ── AD ZONES ── */
@@ -339,8 +340,9 @@
     <a href="#expenses">Expenses</a>
     <a href="#taxes">Taxes</a>
     <a href="#regulations">Regulations</a>
-    <a href="/guides/" style="margin-left:8px; border:1.5px solid var(--blue); border-radius:50px; padding:5px 14px; font-size:13px; font-weight:600; color:var(--blue); text-decoration:none; background:var(--card);">Guides</a>
-    <a href="/about.html" style="border:1.5px solid var(--blue); border-radius:50px; padding:5px 14px; font-size:13px; font-weight:600; color:var(--blue); text-decoration:none; background:var(--card);">About</a>
+    <span class="nav-sep"></span>
+    <a href="/guides/">Guides</a>
+    <a href="/about.html">About</a>
   </nav>
 </header>
 
