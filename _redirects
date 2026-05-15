@@ -1,0 +1,5 @@
+# Redirect index.html to canonical root
+/index.html / 301
+
+# Redirect www to non-www (Cloudflare Pages handles domain-level, but belt-and-suspenders)
+https://www.hostcalc.co/* https://hostcalc.co/:splat 301
